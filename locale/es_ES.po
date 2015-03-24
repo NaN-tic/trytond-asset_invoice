@@ -1,0 +1,15 @@
+# 
+msgid ""
+msgstr "Content-Type: text/plain; charset=utf-8\n"
+
+msgctxt "field:account.invoice.line,invoice_asset:"
+msgid "Asset"
+msgstr "Activo"
+
+msgctxt "field:sale.line,asset_used:"
+msgid "Asset"
+msgstr "Activo"
+
+msgctxt "field:sale.sale,asset:"
+msgid "Asset"
+msgstr "Activo"
