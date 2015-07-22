@@ -21,6 +21,12 @@ class InvoiceLine:
             ],
         depends=['type', 'party'])
 
+    def _credit(self):
+        result = super(InvoiceLine, self)._credit()
+        if self.invoice_asset:
+            result['invoice_asset'] = self.invoice_asset.id
+        return result
+
 
 class Sale:
     __name__ = 'sale.sale'
