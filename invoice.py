@@ -14,11 +14,6 @@ class InvoiceLine:
         states={
             'invisible': Eval('type') != 'line',
             },
-        domain=[
-            ('owner', '=', If(Bool(Eval('_parent_invoice', {}).get('party')),
-                    Eval('_parent_invoice', {}).get('party'),
-                    Eval('party'))),
-            ],
         depends=['type', 'party'])
 
     def _credit(self):
