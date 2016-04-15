@@ -48,8 +48,8 @@ class SaleLine:
             return self.sale.asset.id
         return None
 
-    def get_invoice_line(self, invoice_type):
-        lines = super(SaleLine, self).get_invoice_line(invoice_type)
+    def get_invoice_line(self):
+        lines = super(SaleLine, self).get_invoice_line()
         if self.asset_used:
             for line in lines:
                 line.invoice_asset = self.asset_used
