@@ -1,0 +1,16 @@
+<tryton>
+    <data depends="sale">
+        <record model="ir.ui.view" id="sale_view_form">
+            <field name="model">sale.sale</field>
+            <field name="type">form</field>
+            <field name="inherit" ref="sale.sale_view_form"/>
+            <field name="name">sale_form</field>
+        </record>
+        <record model="ir.ui.view" id="sale_view_tree">
+            <field name="model">sale.sale</field>
+            <field name="type">tree</field>
+            <field name="inherit" ref="sale.sale_view_tree"/>
+            <field name="name">sale_list</field>
+        </record>
+    </data>
+</tryton>

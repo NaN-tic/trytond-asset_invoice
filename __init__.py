@@ -2,6 +2,7 @@
 # copyright notices and license terms.
 from trytond.pool import Pool
 from .invoice import *
+from .sale import *
 
 
 def register():
