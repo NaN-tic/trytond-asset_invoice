@@ -8,6 +8,8 @@ from . import sale
 def register():
     Pool.register(
         invoice.InvoiceLine,
+        module='asset_invoice', type_='model')
+    Pool.register(
         sale.Sale,
         sale.SaleLine,
-        module='asset_invoice', type_='model')
+        module='asset_invoice', type_='model', depends=['sale'])
