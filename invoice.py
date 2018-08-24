@@ -7,9 +7,8 @@ from trytond.pyson import Eval
 __all__ = ['InvoiceLine']
 
 
-class InvoiceLine:
+class InvoiceLine(metaclass=PoolMeta):
     __name__ = 'account.invoice.line'
-    __metaclass__ = PoolMeta
     invoice_asset = fields.Many2One('asset', 'Asset',
         states={
             'invisible': Eval('type') != 'line',

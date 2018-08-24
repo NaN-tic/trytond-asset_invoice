@@ -7,9 +7,8 @@ from trytond.pyson import Eval
 __all__ = ['Sale', 'SaleLine']
 
 
-class Sale:
+class Sale(metaclass=PoolMeta):
     __name__ = 'sale.sale'
-    __metaclass__ = PoolMeta
     asset = fields.Many2One('asset', 'Asset',
         states={
             'readonly': Eval('state') != 'draft',
@@ -17,9 +16,8 @@ class Sale:
         depends=['state'])
 
 
-class SaleLine:
+class SaleLine(metaclass=PoolMeta):
     __name__ = 'sale.line'
-    __metaclass__ = PoolMeta
     asset_used = fields.Function(fields.Many2One('asset', 'Asset'),
         'on_change_with_asset_used')
 
