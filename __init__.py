@@ -3,6 +3,7 @@
 from trytond.pool import Pool
 from . import invoice
 from . import sale
+from . import project
 
 
 def register():
@@ -13,3 +14,6 @@ def register():
         sale.Sale,
         sale.SaleLine,
         module='asset_invoice', type_='model', depends=['sale'])
+    Pool.register(
+        project.Work,
+        module='asset_invoice', type_='model', depends=['project'])
