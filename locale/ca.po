@@ -17,3 +17,15 @@ msgstr "Actiu"
 msgctxt "field:project.work,asset:"
 msgid "Asset"
 msgstr "Actiu"
+
+msgctxt "model:ir.action,name:act_asset_invoice_form2"
+msgid "Invoices"
+msgstr "Factures"
+
+msgctxt "model:ir.action,name:act_asset_project_form2"
+msgid "Projects"
+msgstr "Projectes"
+
+msgctxt "model:ir.action,name:act_asset_sale_form2"
+msgid "Sales"
+msgstr "Vendes"

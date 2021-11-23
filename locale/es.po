@@ -17,3 +17,15 @@ msgstr "Activo"
 msgctxt "field:project.work,asset:"
 msgid "Asset"
 msgstr "Activo"
+
+msgctxt "model:ir.action,name:act_asset_invoice_form2"
+msgid "Invoices"
+msgstr "Facturas"
+
+msgctxt "model:ir.action,name:act_asset_project_form2"
+msgid "Projects"
+msgstr "Proyectos"
+
+msgctxt "model:ir.action,name:act_asset_sale_form2"
+msgid "Sales"
+msgstr "Ventas"

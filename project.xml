@@ -8,5 +8,19 @@
             <field name="inherit" ref="project.work_view_form"/>
             <field name="name">project_work_form</field>
         </record>
+
+        <!-- asset to project -->
+        <record model="ir.action.act_window" id="act_asset_project_form2">
+            <field name="name">Projects</field>
+            <field name="res_model">project.work</field>
+            <field name="domain"
+                eval="[If(Eval('active_ids', []) == [Eval('active_id')], ('asset', '=', Eval('active_id')), ('asset', 'in', Eval('active_ids')))]"
+                pyson="1"/>
+        </record>
+        <record model="ir.action.keyword" id="act_open_asset_project_keyword1">
+            <field name="keyword">form_relate</field>
+            <field name="model">asset,-1</field>
+            <field name="action" ref="act_asset_project_form2"/>
+        </record>
     </data>
 </tryton>
