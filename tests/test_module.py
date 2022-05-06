@@ -9,6 +9,7 @@ from trytond.tests.test_tryton import ModuleTestCase
 class AssetInvoiceTestCase(CompanyTestMixin, ModuleTestCase):
     'Test AssetInvoice module'
     module = 'asset_invoice'
+    extras = ['sale']
 
 
 del ModuleTestCase
