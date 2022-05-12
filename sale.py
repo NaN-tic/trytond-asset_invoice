@@ -21,7 +21,7 @@ class SaleLine(metaclass=PoolMeta):
     asset_used = fields.Function(fields.Many2One('asset', 'Asset'),
         'on_change_with_asset_used')
 
-    @fields.depends('sale')
+    @fields.depends('sale', '_parent_sale.asset')
     def on_change_with_asset_used(self, name=None):
         if self.sale and self.sale.asset:
             return self.sale.asset.id
