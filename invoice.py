@@ -12,8 +12,7 @@ class InvoiceLine(metaclass=PoolMeta):
     invoice_asset = fields.Many2One('asset', 'Asset',
         states={
             'invisible': Eval('type') != 'line',
-            },
-        depends=['type'])
+            })
 
     def _credit(self):
         credit = super(InvoiceLine, self)._credit()

@@ -12,8 +12,7 @@ class Sale(metaclass=PoolMeta):
     asset = fields.Many2One('asset', 'Asset',
         states={
             'readonly': Eval('state') != 'draft',
-            },
-        depends=['state'])
+            })
 
 
 class SaleLine(metaclass=PoolMeta):
