@@ -9,9 +9,7 @@ from configparser import ConfigParser
 
 MODULE = 'asset_invoice'
 PREFIX = 'nantic'
-MODULE2PREFIX = {
-    'asset': 'nantic',
-    }
+MODULE2PREFIX = {}
 
 
 def read(fname):
@@ -48,19 +46,18 @@ for dep in info.get('depends', []):
         requires.append(get_require_version('%s_%s' % (prefix, dep)))
 requires.append(get_require_version('trytond'))
 
-tests_require = []
+tests_require = [
+    get_require_version('proteus'),
+]
+
 series = '%s.%s' % (major_version, minor_version)
 if minor_version % 2:
     branch = 'default'
 else:
     branch = series
-dependency_links = [
-    ('hg+https://hg@bitbucket.org/nantic/trytond-asset@%(branch)s'
-        '#egg=nantic_asset-%(series)s' % {
-            'branch': branch,
-            'series': series,
-            }),
-    ]
+
+dependency_links = []
+
 if minor_version % 2:
     # Add development index for testing with proteus
     dependency_links.append('https://trydevpi.tryton.org/')
